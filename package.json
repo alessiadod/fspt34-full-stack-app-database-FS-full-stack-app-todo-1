@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "author": "Krista Moroder & Germinal Camps for CodeOp",
   "license": "Proprietary",
+  "type": "module",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www.js",
     "migrate": "node ./model/database.js"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "bin": {
+    "www": "./bin/www.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -20,7 +24,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "mysql": "^2.17.1",
+    "mysql2": "^3.12.0",
     "nodemon": "^1.19.1"
   },
   "devDependencies": {

@@ -1,6 +1,12 @@
-require("dotenv").config();
-const mysql = require("mysql");
-const fs = require("fs");
+import "dotenv/config";
+import mysql from "mysql2";
+import fs from "fs";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+// Define __dirname for ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const DB_HOST = process.env.DB_HOST;
 const DB_USER = process.env.DB_USER;
